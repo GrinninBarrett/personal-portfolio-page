@@ -1,16 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Tucker Barrett</title>
+    <link href="styles/normalize.css" rel="stylesheet">
     <link href="styles/style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/favicon.png">
   </head>
+
   <body>
-    <div class="container">
-      <img id="tucker" class="photo-background" src="images/tucker-photo.jpg" alt="Photo of Tucker Barrett">
-    </div>
-    <h1>Hey! I'm Tucker Barrett.</h1>
+    <main>
+      <header>
+        <div id="header-content">
+          <a href="#welcome-section"><img src="images/logo-2.png" id="header-logo" alt="Tucker's Logo"></a>
+          <nav id="navbar">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+  
+      <section id="welcome-section">
+        <h1>Hey! I'm Tucker Barrett.</h1>
+        <img id="tucker" class="photo-background" src="images/tucker-photo.jpg" alt="Tucker Barrett">
+      </section>
+  
+      <section id="about">
+        <img src="images/tucker-avatar.png" id="tucker-avatar" alt="Tucker's avatar">
+        <h2>A little about me</h2>
+        <p>I'm a music teacher-turned-developer. I've always been excited about tech, but am finally
+          making the change to begin contributing to the industry, rather than simply benefiting from it.
+        </p>
+      </section>
+    </main>
+
+    <script src="scripts/main.js"></script>
   </body>
+
 </html>
