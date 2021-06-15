@@ -37,7 +37,15 @@ nav a:hover {
 }
 
 h1 {
-  font-size: 2.5vw;
+  font-size: 2.8vw;
+}
+
+h2 {
+  font-size: 2.2em;
+}
+
+p {
+  font-size: 1.5em;
 }
 
 
@@ -68,10 +76,20 @@ h1 {
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
+  height: 100%;
+}
+
+#intro-container {
+  width: 30%;
+  text-align: center;
+}
+
+#tucker-photo-container {
+  width: 60%; 
 }
 
 #tucker-photo {
-  width: 60%;
+  width: 100%;
   background-repeat: no-repeat;
   object-fit: cover;
   background-position: bottom;
@@ -79,9 +97,9 @@ h1 {
 }
 
 #about {
-  height: 100vh;
   display: block; 
-  position: relative; 
+  position: relative;
+  height: 100vh;
 }
 
 #about-container {
@@ -92,45 +110,37 @@ h1 {
 }
 
 #about-text {
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 35%;
   text-align: center;
+
+}
+
+/* Hamburger menu to display on smaller screens */
+.fas {
+  display: none;
+  color: #f0d5c0;
+  height: 100%;
 }
 
 
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: #f0d5c0;
-}
-
-/* Remember to deal with hamburger menu here */
+/* Adjust content for smaller screens */
 @media screen and (max-width: 768px) {
-
-  nav a {
-    display: none;
-  }
-
-  h1 {
-    font-size: 5vw;
-    padding: 20px 0;
-  }
-
-  #header-logo {
-    margin-left: 15px;
-  }
-
-  #mobile-nav {
-    display: block;
-    background-color: #144275;
-  }
 
   nav ul {
     flex-direction: column;
-    background-color: #fff;
+    position: absolute;
+    display: none;
+    left: -200px;
+    top: 0;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: visible;
+    transition: left 0.3s ease,
+        box-shadow 0.3s ease;    
     width: 100%;
     border-radius: 10px;
     text-align: center;
@@ -139,17 +149,69 @@ h1 {
         0 10px 27px rgba(0, 0, 0, 0.05);
   }
 
-  #welcome-container {
+  h1 {
+    font-size: 6vw;
+  }
+
+  #header-logo {
+    margin-left: 15px;
+  }
+
+  #navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    padding-right: 20px;
+  }
+
+  #mobile-nav {
     display: block;
-    text-align: center;
-    height: 100vh;
+    background-color: #144275;
+    cursor: pointer;
+    height: 100%;
+  }
+
+  #welcome-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  #intro-container {
+    width: 85vw;
+    margin: 20px 0;
+  }
+
+  #tucker-photo-container {
+    width: 100vw;
+    height: 100%;
+    margin: 20px 0;
   }
 
   #tucker-photo {
-    width: 100vw;
+    height: 85%;
+  }
+
+  #about-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  #about-text {
+    width: 85vw;
+  }
+
+  #about-text p {
+    font-size: 1.3em;
   }
 
   #tucker-avatar {
 
+  }
+
+  .fas {
+    display: block;
   }
 }

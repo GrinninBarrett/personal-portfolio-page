@@ -9,23 +9,25 @@
     <link href="styles/normalize.css" rel="stylesheet">
     <link href="styles/style.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <script src="https://kit.fontawesome.com/158ac34f0f.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <main>
       <header>
         <div id="header-content">
-          <a href="#welcome-section"><img src="images/logo-2.png" id="header-logo" alt="Tucker's Logo"></a>
+          <a href="#"><img src="images/logo-2.png" id="header-logo" alt="Tucker's Logo"></a>
           <nav id="navbar">
-            <ul>
+            <ul id="nav-menu">
               <li class="nav-item"><a href="#about">About</a></li>
               <li class="nav-item"><a href="#projects">Projects</a></li>
               <li class="nav-item"><a href="#contact">Contact</a></li>
             </ul>
             <button id="mobile-nav">
+              <i class="fas fa-bars"></i>
+              <!-- <span class="bar"></span>
               <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
+              <span class="bar"></span> -->
             </button>
           </nav>
         </div>
@@ -33,8 +35,12 @@
   
       <section id="welcome-section">
         <div id="welcome-container">
-          <h1>Hey! I'm Tucker Barrett.</h1>
-          <img id="tucker-photo" class="photo-background" src="images/tucker-photo.jpg" alt="Tucker Barrett">
+          <div id="intro-container">
+            <h1>Hey! I'm Tucker Barrett - <br>a web developer.</h1>
+          </div>
+          <div id="tucker-photo-container">
+            <img id="tucker-photo" class="photo-background" src="images/tucker-photo.jpg" alt="Tucker Barrett">
+          </div>
         </div>
       </section>
   
@@ -51,8 +57,12 @@
       </section>
 
       <section id="projects">
+        <ul>
+          <div class="project-tile">
+            <li><a href="https://grinninbarrett.github.io/wasted-class-time/">Wasted Class Time</a></li>
+          </div>
+        </ul>
         <div class="project-tile">
-          <a href="https://grinninbarrett.github.io/wasted-class-time/">Wasted Class Time</a>
         </div>
       </section>
 
