@@ -1,41 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
 
-/* html { 
-  background: url(/images/tucker-photo.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-} */
-
 body {
   font-family: 'Tenor Sans', sans-serif;
   color: #f0d5c0;
   background-color: #144275;
-  height: 100vh;
 }
 
 header {
-  position: fixed;
-  background-color: #144275;
+  position: sticky;
   top: 0;
+  background-color: #144275;
   width: 100vw;
-  height: 85px;
+  z-index: 1;
 }
 
-nav {
-  margin-right: 25px;
+nav ul {
+  margin-right: 50px;
+  display: flex;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #f0d5c0;
 }
 
 nav a {
-  text-decoration: none;
-  color: #f0d5c0;
   font-size: 1.2em;
   padding: 0 20px;
 }
 nav a:hover {
   color: #c76e66;
 }
+
+h1 {
+  font-size: 2.5vw;
+}
+
 
 #header-content {
   display: flex;
@@ -45,35 +49,107 @@ nav a:hover {
 
 #header-logo {
   height: 85px;
-  margin-left: 25px;
+  margin-left: 50px;
 }
 
-#navbar a {
-
+#mobile-nav {
+  display: none;
+  border: none;
 }
 
 #welcome-section {
+  display: block;
+  position: relative;
   height: 100vh;
-  margin: 100px;
 }
 
-#about {
+#welcome-container {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  width: 100%;
 }
 
-.container {
+#tucker-photo {
+  width: 60%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-position: bottom;
+  position: relative;
+}
+
+#about {
+  height: 100vh;
+  display: block; 
+  position: relative; 
+}
+
+#about-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  min-height: 100%;
-  min-width: 100%;
+  justify-content: space-evenly;
+  height: 100%;
 }
 
-.photo-background {
-  flex-shrink: 0;
-  max-width: 100%;
-  max-height: 100%;
+#about-text {
+  width: 50%;
+  text-align: center;
+}
+
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #f0d5c0;
+}
+
+/* Remember to deal with hamburger menu here */
+@media screen and (max-width: 768px) {
+
+  nav a {
+    display: none;
+  }
+
+  h1 {
+    font-size: 5vw;
+    padding: 20px 0;
+  }
+
+  #header-logo {
+    margin-left: 15px;
+  }
+
+  #mobile-nav {
+    display: block;
+    background-color: #144275;
+  }
+
+  nav ul {
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow:
+        0 10px 27px rgba(0, 0, 0, 0.05);
+  }
+
+  #welcome-container {
+    display: block;
+    text-align: center;
+    height: 100vh;
+  }
+
+  #tucker-photo {
+    width: 100vw;
+  }
+
+  #tucker-avatar {
+
+  }
 }
