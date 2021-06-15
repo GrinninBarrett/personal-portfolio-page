@@ -13,27 +13,28 @@
   </head>
 
   <body>
+
+    <header>
+      <div id="header-content">
+        <a href="#"><img src="images/logo-2.png" id="header-logo" alt="Tucker's Logo"></a>
+        <nav id="navbar">
+          <ul id="nav-menu">
+            <li class="nav-item"><a href="#about">About</a></li>
+            <li class="nav-item"><a href="#projects">Projects</a></li>
+            <li class="nav-item"><a href="#contact">Contact</a></li>
+          </ul>
+          <button id="mobile-nav">
+            <i class="fas fa-bars fa-2x"></i>
+            <!-- <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span> -->
+          </button>
+        </nav>
+      </div>
+    </header>
+
     <main>
-      <header>
-        <div id="header-content">
-          <a href="#"><img src="images/logo-2.png" id="header-logo" alt="Tucker's Logo"></a>
-          <nav id="navbar">
-            <ul id="nav-menu">
-              <li class="nav-item"><a href="#about">About</a></li>
-              <li class="nav-item"><a href="#projects">Projects</a></li>
-              <li class="nav-item"><a href="#contact">Contact</a></li>
-            </ul>
-            <button id="mobile-nav">
-              <i class="fas fa-bars"></i>
-              <!-- <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span> -->
-            </button>
-          </nav>
-        </div>
-      </header>
-  
-      <section id="welcome-section">
+      <section id="welcome-section" class="content-section">
         <div id="welcome-container">
           <div id="intro-container">
             <h1>Hey! I'm Tucker Barrett - <br>a web developer.</h1>
@@ -44,7 +45,7 @@
         </div>
       </section>
   
-      <section id="about">
+      <section id="about" class="content-section">
         <div id="about-container">
           <img src="images/tucker-avatar.png" id="tucker-avatar" alt="Tucker's avatar">
           <div id="about-text">
@@ -57,12 +58,93 @@
       </section>
 
       <section id="projects">
-        <ul>
+        <h2>Here's some of what I've been working on:</h2>
+
+        <div id="projects-container">
+
           <div class="project-tile">
-            <li><a href="https://grinninbarrett.github.io/wasted-class-time/">Wasted Class Time</a></li>
+            <figure class="card-container">
+              <div class="card-header-container">
+                <h3 class="card-header">Wasted Class Time</h3>
+              </div>
+              <div class="card-content">
+                <a class="card-image-link" href="https://grinninbarrett.github.io/wasted-class-time/" target="_blank">
+                <img class="card-image" src="images/wasted-class-time.png" alt="Screenshot from the Wasted Class Time app">
+                </a>
+              </div>
+            </figure>
           </div>
-        </ul>
-        <div class="project-tile">
+
+          <div class="project-tile">
+            <figure class="card-container">
+              <div class="card-header-container">
+                <h3 class="card-header">Etch-A-Sketch</h3>
+              </div>
+              <div class="card-content">
+                <a class="card-image-link" href="https://grinninbarrett.github.io/etch-a-sketch/" target="_blank">
+                  <img class="card-image" src="images/etch-a-sketch.png" alt="Screenshot from the Etch-a-Sketch app">
+                </a>
+              </div>
+            </figure>
+
+          </div>
+
+          <div class="project-tile">
+            <figure class="card-container">
+              <div class="card-header-container">
+                <h3 class="card-header">Technical Documentation</h3>
+              </div>
+              <div class="card-content">
+                <a class="card-image-link" href="https://grinninbarrett.github.io/Technical-Documentation-Page/" target="_blank">
+                  <img class="card-image" src="images/technical-documentation-page.png" alt="Screenshot from Technical Documentation Page">
+                </a>
+              </div>
+            </figure>
+
+          </div>
+
+          <div class="project-tile">
+            <figure class="card-container">
+              <div class="card-header-container">
+                <h3 class="card-header">Rock-Paper-Scissors</h3>
+              </div>
+              <div class="card-content">
+                <a class="card-image-link" href="https://grinninbarrett.github.io/rock-paper-scissors-new/" target="_blank">
+                  <img class="card-image" src="images/rock-paper-scissors.png" alt="Screenshot from Rock-Paper-Scissors app">
+                </a>
+              </div>
+            </figure>
+
+          </div>
+
+          <div class="project-tile">
+            <figure class="card-container">
+              <div class="card-header-container">
+                <h3 class="card-header">Google Homepage</h3>
+              </div>
+              <div class="card-content">
+                <a class="card-image-link" href="https://grinninbarrett.github.io/google-homepage/" target="_blank">
+                  <img class="card-image" src="images/google-homepage.png" alt="Screenshot from Tucker's reproduction of the Google homepage">
+                </a>
+              </div>
+            </figure>
+
+          </div>
+
+          <div class="project-tile">
+            <figure class="card-container">
+              <div class="card-header-container">
+                <h3 class="card-header">Horiseon</h3>
+              </div>
+              <div class="card-content">
+                <a class="card-image-link" href="https://grinninbarrett.github.io/Horiseon/" target="_blank">
+                  <img class="card-image" src="images/horiseon.png" alt="Screenshot from Tucker's Horiseon page">
+                </a>
+              </div>
+            </figure>
+
+          </div>
+
         </div>
       </section>
 
@@ -73,6 +155,10 @@
           </ul>
         </div>
       </section>
+
+      <footer id="main-footer">
+        <p id="footer-text">&copy Tucker Barrett 2021</p>
+      </footer>
     </main>
 
     <script src="scripts/main.js"></script>

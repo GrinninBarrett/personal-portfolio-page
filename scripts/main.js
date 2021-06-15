@@ -4,5 +4,5 @@ let mobileNavMenu = document.querySelector("#nav-menu");
 
 mobileNavButton.addEventListener("click", () => {
     mobileNavMenu.classList.toggle("menu-shown");
-    
+    mobileNavMenu.style.display = "flex";
 });

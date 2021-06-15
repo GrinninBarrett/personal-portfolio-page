@@ -1,16 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
 
+:root {
+  --dark-blue: #144275;
+  --light: #f0d5c0;
+  --highlights: #c76e66;
+  --other: #c59c98;
+}
+
+html {
+  min-height: 100vh;
+}
+
+
 body {
   font-family: 'Tenor Sans', sans-serif;
-  color: #f0d5c0;
-  background-color: #144275;
+  color: var(--light);
+  background-color: var(--dark-blue);
 }
 
 header {
   position: sticky;
   top: 0;
-  background-color: #144275;
-  width: 100vw;
+  background-color: var(--dark-blue);
+  width: 100%;
+  height: 85px;
   z-index: 1;
 }
 
@@ -25,15 +38,15 @@ li {
 
 a {
   text-decoration: none;
-  color: #f0d5c0;
 }
 
 nav a {
   font-size: 1.2em;
   padding: 0 20px;
+  color: var(--light);
 }
 nav a:hover {
-  color: #c76e66;
+  color: var(--highlights);
 }
 
 h1 {
@@ -42,50 +55,74 @@ h1 {
 
 h2 {
   font-size: 2.2em;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.3em;
+  text-align: center;
 }
 
 p {
   font-size: 1.5em;
+  text-align: center;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light);
+}
+
+footer p {
+  font-size: 0.8em;
+  color: var(--dark-blue);
+}
+
+
+/* All ids */
 
 #header-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100%;
 }
 
 #header-logo {
   height: 85px;
-  margin-left: 50px;
+  margin-left: 40px;
 }
 
+/* Hide mobile "hamburger" icon on larger screen sizes and remove button styling */
 #mobile-nav {
   display: none;
   border: none;
 }
 
 #welcome-section {
-  display: block;
-  position: relative;
-  height: 100vh;
+  margin-top: -85px;
 }
 
 #welcome-container {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 100%;
   height: 100%;
 }
 
 #intro-container {
-  width: 30%;
+  width: 35%;
   text-align: center;
 }
 
 #tucker-photo-container {
-  width: 60%; 
+  width: 60%;
 }
 
 #tucker-photo {
@@ -94,12 +131,6 @@ p {
   object-fit: cover;
   background-position: bottom;
   position: relative;
-}
-
-#about {
-  display: block; 
-  position: relative;
-  height: 100vh;
 }
 
 #about-container {
@@ -115,42 +146,113 @@ p {
   align-items: center;
   justify-content: space-between;
   width: 35%;
-  text-align: center;
-
 }
 
-/* Hamburger menu to display on smaller screens */
+#projects {
+  padding-top: 60px;
+}
+
+#projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* All classes */
+
+.content-section {
+  height: 100vh;
+}
+
+
+/* Hamburger menu icon to display on smaller screens */
 .fas {
-  display: none;
-  color: #f0d5c0;
+  color: var(--light);
+}
+
+
+/* Styles the cards in the products section */
+.project-tile {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+}
+
+.card-container {
+  padding: 5px 15px;
+  margin: 1em 2em;
+  border: 5px double var(--light);
+  border-radius: 6px;
+}
+
+.card-container .card-header {
+  margin: -1.25rem 0 1.25rem 0;
+  border: 2px solid var(--light);
+  border-radius: 6px;
+}
+
+.card-container:hover,
+.card-container:hover .card-header {
+  box-shadow: inset 2px 2px 5px var(--highlights), 2px 2px 10px var(--highlights);
+  transition: all 0.3s ease-in-out;
+}
+
+.card-header {
+  background-color: var(--dark-blue);
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image {
   height: 100%;
+  width: 100%;
 }
 
 
 /* Adjust content for smaller screens */
+
+@media screen and (max-width: 992px) {
+  .project-tile {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* Adjust content for mobile layouts */
 @media screen and (max-width: 768px) {
 
-  nav ul {
+  #nav-menu {
     flex-direction: column;
     position: absolute;
     display: none;
-    left: -200px;
+    right: -200px;
     top: 0;
     height: 100%;
     overflow-y: scroll;
     overflow-x: visible;
     transition: left 0.3s ease,
         box-shadow 0.3s ease;    
-    width: 100%;
     border-radius: 10px;
     text-align: center;
     transition: 0.3s;
-    box-shadow:
-        0 10px 27px rgba(0, 0, 0, 0.05);
   }
 
   h1 {
-    font-size: 6vw;
+    font-size: 7vw;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  h3 {
+    font-size: 1em;
   }
 
   #header-logo {
@@ -158,24 +260,22 @@ p {
   }
 
   #navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 25px;
     padding-right: 20px;
   }
 
   #mobile-nav {
     display: block;
-    background-color: #144275;
+    background-color: var(--dark-blue);
     cursor: pointer;
     height: 100%;
+    z-index: 2;
   }
 
   #welcome-container {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    margin-top: 85px;
   }
 
   #intro-container {
@@ -184,7 +284,7 @@ p {
   }
 
   #tucker-photo-container {
-    width: 100vw;
+    width: 100%;
     height: 100%;
     margin: 20px 0;
   }
@@ -214,4 +314,16 @@ p {
   .fas {
     display: block;
   }
+
+  .nav-item .menu-shown {
+    height: 25px;
+    border-bottom: 1px solid var(--dark-blue);
+  }
+
+  .project-tile {
+    flex: 1 0 100%;
+    max-width: 100%;
+    margin-bottom: 25px;
+  }
+
 }
