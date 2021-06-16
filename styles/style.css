@@ -19,7 +19,7 @@ body {
 }
 
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
   background-color: var(--dark-blue);
   width: 100%;
@@ -106,7 +106,7 @@ footer p {
 }
 
 #welcome-section {
-  margin-top: -85px;
+  /* margin-top: -85px; */
 }
 
 #welcome-container {
@@ -149,15 +149,39 @@ footer p {
 }
 
 #projects {
-  padding-top: 60px;
+  padding-top: 65px;
+  height: 100%;
+}
+
+#top-project-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 22vw;
 }
 
 #projects-container {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+}
+
+#contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#contact-links-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
 }
 
 
@@ -174,33 +198,42 @@ footer p {
 }
 
 
-/* Styles the cards in the products section */
-.project-tile {
-  flex: 0 0 33.333%;
-  max-width: 33.333%;
+/* Styles the cards in the projects section */
+#projects-container .project-tile:nth-of-type(n+1) {
+  flex: 0 0 34%;
+  max-width: 34%;
 }
 
 .card-container {
-  padding: 5px 15px;
+  padding: 15px;
   margin: 1em 2em;
-  border: 5px double var(--light);
+  border: 2px dashed var(--light);
   border-radius: 6px;
-}
-
-.card-container .card-header {
-  margin: -1.25rem 0 1.25rem 0;
-  border: 2px solid var(--light);
-  border-radius: 6px;
-}
-
-.card-container:hover,
-.card-container:hover .card-header {
-  box-shadow: inset 2px 2px 5px var(--highlights), 2px 2px 10px var(--highlights);
   transition: all 0.3s ease-in-out;
+}
+
+.card-header-container {
+  height: 60px;
 }
 
 .card-header {
   background-color: var(--dark-blue);
+  margin: -1.825rem 0 1.4rem 0;
+  border: 2px solid var(--light);
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-container:hover {
+  border: 2px solid var(--highlights);
+}
+
+.card-container:hover .card-header {
+  border: 2px solid var(--highlights);
+}
+
+.card-container .card-content {
+  flex-grow: 1;
 }
 
 .card-content {
@@ -214,34 +247,37 @@ footer p {
   width: 100%;
 }
 
+.github-link {
+  width: 25%;
+}
+
+.linkedin-link {
+  width: 25%;
+}
+
+.contact-link-image {
+  width: 100%;
+  height: 100%;
+}
+
 
 /* Adjust content for smaller screens */
-
 @media screen and (max-width: 992px) {
-  .project-tile {
-    flex: 0 0 50%;
-    max-width: 50%;
+
+  #top-project-container {
+    flex: 1 0 100%;
+    max-width: 100%;
   }
+
+  #projects-container .project-tile:nth-of-type(n+1) {
+    flex: 0 0 45%;
+    max-width: 45%;
+  } 
+  
 }
 
 /* Adjust content for mobile layouts */
 @media screen and (max-width: 768px) {
-
-  #nav-menu {
-    flex-direction: column;
-    position: absolute;
-    display: none;
-    right: -200px;
-    top: 0;
-    height: 100%;
-    overflow-y: scroll;
-    overflow-x: visible;
-    transition: left 0.3s ease,
-        box-shadow 0.3s ease;    
-    border-radius: 10px;
-    text-align: center;
-    transition: 0.3s;
-  }
 
   h1 {
     font-size: 7vw;
@@ -261,6 +297,22 @@ footer p {
 
   #navbar {
     padding-right: 20px;
+  }
+
+  #nav-menu {
+    flex-direction: column;
+    position: absolute;
+    display: none;
+    right: -200px;
+    top: 0;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: visible;
+    transition: left 0.3s ease,
+        box-shadow 0.3s ease;    
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
   }
 
   #mobile-nav {
@@ -284,7 +336,7 @@ footer p {
   }
 
   #tucker-photo-container {
-    width: 100%;
+    width: 100vw;
     height: 100%;
     margin: 20px 0;
   }
@@ -307,8 +359,28 @@ footer p {
     font-size: 1.3em;
   }
 
-  #tucker-avatar {
+  #top-project-container {
+    flex: 1 0 100%;
+    max-width: 100%;
+    margin: 0;
+  }
 
+  #projects-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #projects-container .project-tile:nth-of-type(n+1) {
+    flex: 1 0 100%;
+    max-width: 100%;
+  }
+  
+  #projects-header {
+   margin: 25px 0; 
+  }
+
+  #contact-links-container {
+    width: 80%;
   }
 
   .fas {
