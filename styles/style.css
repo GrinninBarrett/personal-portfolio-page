@@ -1,16 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap');
 
+/* Initializes color variables */
 :root {
   --dark-blue: #144275;
   --light: #f0d5c0;
   --highlights: #c76e66;
-  --other: #c59c98;
 }
 
 html {
   min-height: 100vh;
 }
-
 
 body {
   font-family: 'Tenor Sans', sans-serif;
@@ -18,6 +17,7 @@ body {
   background-color: var(--dark-blue);
 }
 
+/* Creates fixed header, allowing other content to scroll under */
 header {
   position: fixed;
   top: 0;
@@ -36,15 +36,13 @@ li {
   list-style-type: none;
 }
 
-a {
-  text-decoration: none;
-}
-
 nav a {
+  text-decoration: none;
   font-size: 1.2em;
   padding: 0 20px;
   color: var(--light);
 }
+
 nav a:hover {
   color: var(--highlights);
 }
@@ -68,6 +66,7 @@ p {
   text-align: center;
 }
 
+/* Creates fixed footer */
 footer {
   position: fixed;
   bottom: 0;
@@ -105,10 +104,7 @@ footer p {
   border: none;
 }
 
-#welcome-section {
-  /* margin-top: -85px; */
-}
-
+/* Styles the "welcome" section */
 #welcome-container {
   display: flex;
   align-items: center;
@@ -133,6 +129,8 @@ footer p {
   position: relative;
 }
 
+
+/* Styles the "about" section */
 #about-container {
   display: flex;
   align-items: center;
@@ -148,6 +146,8 @@ footer p {
   width: 35%;
 }
 
+
+/* Styles the "projects" section */
 #projects {
   padding-top: 65px;
   height: 100%;
@@ -168,6 +168,8 @@ footer p {
   align-items: center;
 }
 
+
+/* Styles the "contact" section */
 #contact-content {
   display: flex;
   flex-direction: column;
@@ -198,12 +200,14 @@ footer p {
 }
 
 
-/* Styles the cards in the projects section */
+/* Styles the cards in the projects section, excluding the "top project" */
 #projects-container .project-tile:nth-of-type(n+1) {
   flex: 0 0 34%;
   max-width: 34%;
 }
 
+
+/* Styles all project cards */
 .card-container {
   padding: 15px;
   margin: 1em 2em;
@@ -247,6 +251,8 @@ footer p {
   width: 100%;
 }
 
+
+/* Sizes the contact containers and links */
 .github-link {
   width: 25%;
 }
@@ -261,7 +267,7 @@ footer p {
 }
 
 
-/* Adjust content for smaller screens */
+/* Adjusts content for smaller screens */
 @media screen and (max-width: 992px) {
 
   #top-project-container {
@@ -276,7 +282,8 @@ footer p {
   
 }
 
-/* Adjust content for mobile layouts */
+
+/* Adjusts content for mobile layouts */
 @media screen and (max-width: 768px) {
 
   h1 {
@@ -299,6 +306,8 @@ footer p {
     padding-right: 20px;
   }
 
+
+  /* Mobile nav menu, as of yet unfinished */
   #nav-menu {
     flex-direction: column;
     position: absolute;
@@ -315,6 +324,7 @@ footer p {
     transition: 0.3s;
   }
 
+  /* Displays mobile hamburger icon */
   #mobile-nav {
     display: block;
     background-color: var(--dark-blue);
