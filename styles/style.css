@@ -32,18 +32,30 @@ nav ul {
   display: flex;
 }
 
-li {
+nav li {
   list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  border-radius: 15px;
+  transition: all 0.5s ease;
 }
 
-nav a {
+li a {
+  width: 100%;
+  text-align: center;
   text-decoration: none;
   font-size: 1.2em;
-  padding: 0 20px;
   color: var(--light);
+  transition: all 0.5s ease;
 }
 
-nav a:hover {
+nav li:hover {
+  background-color: var(--light);
+}
+
+nav li:hover > a {
   color: var(--highlights);
 }
 
@@ -195,6 +207,7 @@ footer p {
 /* Hamburger menu icon to display on smaller screens */
 .fas {
   color: var(--light);
+  transition: opacity 0.3s ease;
 }
 
 
@@ -284,6 +297,39 @@ footer p {
 /* Adjusts content for mobile layouts */
 @media screen and (max-width: 768px) {
 
+  /* Mobile nav menu, as of yet unfinished and not functional when in mobile view - will fix */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    display: none;
+    right: -500;
+    top: 0;
+    height: 200%;
+    transition: left 0.3s ease,
+      box-shadow 0.3s ease; 
+    background-color: var(--light);
+    overflow-y: scroll;
+    overflow-x: visible;   
+    border-radius: 10px;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  nav ul.menu-shown {
+    display: flex;
+    right: 20px;
+  }
+
+  li a {
+    color: var(--highlights);
+  }
+
+  li a:active {
+    color: var(--dark-blue);
+  }
+
   h1 {
     font-size: 7vw;
   }
@@ -304,22 +350,9 @@ footer p {
     padding-right: 20px;
   }
 
-
-  /* Mobile nav menu, as of yet unfinished and not functional when in mobile view - will fix */
-  #nav-menu {
-    flex-direction: column;
-    position: absolute;
-    display: none;
-    right: -200px;
-    top: 0;
-    height: 100%;
-    overflow-y: scroll;
-    overflow-x: visible;
-    transition: left 0.3s ease,
-        box-shadow 0.3s ease;    
-    border-radius: 10px;
-    text-align: center;
-    transition: 0.3s;
+  #nav-item {
+    padding-top: 20px;
+    color: var(--dark-blue);
   }
 
   /* Displays mobile hamburger icon */
@@ -328,7 +361,7 @@ footer p {
     background-color: var(--dark-blue);
     cursor: pointer;
     height: 100%;
-    z-index: 2;
+    z-index: 3;
   }
 
   #welcome-container {
